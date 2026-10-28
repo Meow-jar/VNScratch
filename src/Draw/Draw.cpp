@@ -12,7 +12,7 @@ Draw::Draw():
 void Draw::run()
 {
 	assetManager am;
-	sf::Texture texture = am.loadTexture("assets/image/nekopara.jpg", "button");
+	sf::Texture texture = am.loadTexture("assets/image/сontinue.jpg", "button");
 	sf::Sprite sprite(texture);
 	while (window.isOpen())
 	{
