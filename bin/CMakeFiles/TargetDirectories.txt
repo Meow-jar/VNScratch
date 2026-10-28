@@ -1,0 +1,3 @@
+/home/monika/cpp/vnscratch/bin/CMakeFiles/vnscratch.dir
+/home/monika/cpp/vnscratch/bin/CMakeFiles/edit_cache.dir
+/home/monika/cpp/vnscratch/bin/CMakeFiles/rebuild_cache.dir
