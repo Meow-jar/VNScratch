@@ -4,6 +4,8 @@ Visual Novel Scratch is a visual novel engine that I make on my own, initially f
 
 ## Build 
 
+to build the engine, install SFML 3.1, Cmake for build and GCC
+
 ```bash
 git clone https://github.com/Meow-jar/VNScratch.git
 mkdir bin
