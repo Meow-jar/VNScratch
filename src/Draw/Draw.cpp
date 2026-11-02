@@ -2,7 +2,6 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Window/Event.hpp>
-#include <optional>
 #include "Draw/Draw.hpp"
 #include "AssetManager/assetManager.hpp"
 #include "Ui/MainMenu/mainMenu.hpp"
@@ -13,12 +12,20 @@ Draw::Draw():
 void Draw::run()
 {
 	mainMenu m;
-	sf::Sprite* sprite = m.Menu();
+	sf::Sprite sprite = m.Menu();
 	while (window.isOpen())
 	{
            
 		while (const std::optional event = window.pollEvent()) 
-		{	
+		{
+			if(const auto* mouseButtonPressed = event->getIf<sf::Event::MouseButtonPressed>())
+			{
+				if(mouseButtonPressed->button == sf::Mouse::Button::Left)
+				{
+					std::cout<<"Mouse x = "<<mouseButtonPressed->position.x<<std::endl;
+					std::cout<<"Mouse y = "<<mouseButtonPressed->position.y<<std::endl;
+				}
+			}
 			if (event->is<sf::Event::Closed>())	
 				window.close();
 	
@@ -26,6 +33,5 @@ void Draw::run()
 		window.clear();
 		window.draw(sprite);
 		window.display();
-		delete sprite;
 	}
 }
