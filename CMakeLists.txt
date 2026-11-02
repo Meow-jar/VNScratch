@@ -11,12 +11,12 @@ add_executable(vnscratch
     src/Draw/Draw.cpp
     src/Engine/Engine.cpp
     src/AssetManager/assetManager.cpp
+    src/Ui/MainMenu/mainMenu.cpp
 )
 
 target_include_directories(vnscratch PRIVATE include)
 
-#target_compile_options(vnscratch)
-
+target_compile_options(vnscratch PRIVATE -O2)
 target_link_libraries(vnscratch PRIVATE
     SFML::System
     SFML::Window

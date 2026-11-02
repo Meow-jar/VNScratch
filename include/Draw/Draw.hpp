@@ -1,11 +1,12 @@
 #pragma once
-
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Texture.hpp>
+#include <iostream>
 class Draw
 {
 	public:
 		Draw();
+		~Draw(){std::cout<<"free Draw"<<std::endl;};
 		void run();
 
 	private:

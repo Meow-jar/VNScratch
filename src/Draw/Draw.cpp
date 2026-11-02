@@ -5,15 +5,15 @@
 #include <optional>
 #include "Draw/Draw.hpp"
 #include "AssetManager/assetManager.hpp"
+#include "Ui/MainMenu/mainMenu.hpp"
 
 Draw::Draw():
-	window(sf::VideoMode({1280, 700}), "VNScratch"){}
+	window(sf::VideoMode({1920, 1080}), "VNScratch"){}
 
 void Draw::run()
 {
-	assetManager am;
-	sf::Texture texture = am.loadTexture("assets/image/сontinue.jpg", "button");
-	sf::Sprite sprite(texture);
+	mainMenu m;
+	sf::Sprite* sprite = m.Menu();
 	while (window.isOpen())
 	{
            
@@ -23,26 +23,9 @@ void Draw::run()
 				window.close();
 	
 		}	
-		window.clear(sf::Color::Blue);
+		window.clear();
 		window.draw(sprite);
 		window.display();
+		delete sprite;
 	}
 }
-/*
-void Draw::processEvents()
-{
-//	sf::Event event;
-
-	while (const std::optional event = window.pollEvent())
-	{
-		if (event->is<sf::Event::Closed>())
-			window.close();
-	}
-}
-
-void Draw::render()
-{
-	window.clear();
-	window.display();
-}
-*/

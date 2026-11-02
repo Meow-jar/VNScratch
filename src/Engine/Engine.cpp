@@ -8,10 +8,10 @@ Engine::Engine()
 
 void Engine::run()
 {
-	importTexture();
+	startWindow();
 }
 
-void Engine::importTexture()
+void Engine::startWindow()
 {
 	Draw draw;
 	draw.run();

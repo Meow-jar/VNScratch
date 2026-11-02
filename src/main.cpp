@@ -3,7 +3,7 @@
 #include "Draw/Draw.hpp"
 int main()
 {
-	Draw draw;
-	draw.run();
+	Engine engine;
+	engine.run();
 	return 0;
 }
